@@ -9,3 +9,10 @@
 
   --primary-font: 'DM Sans', sans-serif;
 }
+
+@media (min-width: 768px) {
+  :root {
+    --px: 5.4rem;
+    --py: 13.6rem;
+  }
+}
