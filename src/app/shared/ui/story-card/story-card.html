@@ -1,0 +1,20 @@
+<a href="#" class="story-card">
+  <picture>
+    <source media="(min-width: 768px)" [srcset]="story().desktopImg" />
+    <img [src]="story().mobileImg" [alt]="story().title" class="story-bg-img" />
+  </picture>
+
+  <div class="story-overlay"></div>
+
+  <div class="story-content">
+    <h3 class="story-title">{{ story().title }}</h3>
+    <p class="story-author">by {{ story().author }}</p>
+
+    <hr class="story-separator" />
+
+    <div class="read-story-link">
+      <span>READ STORY</span>
+      <img src="images/shared/desktop/arrow.svg" class="arrow-icon-light" alt="" />
+    </div>
+  </div>
+</a>

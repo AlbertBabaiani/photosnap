@@ -36,7 +36,7 @@
       embed maps and media from other networks. Then share your story with everyone.
     </p>
 
-    <a href="#"
+    <a routerLink="/stories"
       >VIEW THE STORIES
       <img src="images/shared/desktop/arrow.svg" alt="" />
     </a>
@@ -53,7 +53,7 @@
       for photographers of all levels, brands, businesses you name it.
     </p>
 
-    <a href="#"
+    <a routerLink="/stories"
       >VIEW THE STORIES
       <img src="images/shared/desktop/arrow.svg" alt="" />
     </a>
@@ -62,39 +62,12 @@
 
 <section class="story-grid">
   @for (story of stories(); track story.title) {
-    <a href="#" class="story-card">
-      <picture>
-        <source media="(min-width: 768px)" [srcset]="story.desktopImg" />
-        <img [src]="story.mobileImg" [alt]="story.title" class="story-bg-img" />
-      </picture>
-
-      <div class="story-overlay"></div>
-
-      <div class="story-content">
-        <h3 class="story-title">{{ story.title }}</h3>
-        <p class="story-author">by {{ story.author }}</p>
-
-        <hr class="story-separator" />
-
-        <div class="read-story-link">
-          <span>READ STORY</span>
-
-          <img src="images/shared/desktop/arrow.svg" class="arrow-icon-light" alt="" />
-        </div>
-      </div>
-    </a>
+    <app-story-card [story]="story"></app-story-card>
   }
 </section>
 
 <section class="features-section">
   @for (feature of features(); track feature.title) {
-    <div class="feature-card">
-      <div class="feature-icon-wrapper">
-        <img [src]="feature.icon" [alt]="feature.title + ' icon'" class="feature-icon" />
-      </div>
-
-      <h3 class="feature-title">{{ feature.title }}</h3>
-      <p class="feature-description">{{ feature.description }}</p>
-    </div>
+    <app-feature-card [feature]="feature"></app-feature-card>
   }
 </section>

@@ -1,13 +1,19 @@
 import { Component, signal } from '@angular/core';
+import { Story } from '../../shared/models/story.model';
+import { Feature } from '../../shared/models/feature.model';
+import { StoryCardComponent } from '../../shared/ui/story-card/story-card';
+import { FeatureCardComponent } from '../../shared/ui/feature-card/feature-card';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-home',
-  imports: [],
+  standalone: true,
+  imports: [StoryCardComponent, FeatureCardComponent, RouterLink],
   templateUrl: './home.html',
   styleUrl: './home.scss',
 })
 export class Home {
-  stories = signal([
+  stories = signal<Story[]>([
     {
       desktopImg: 'images/stories/desktop/mountains.jpg',
       mobileImg: 'images/stories/mobile/mountains.jpg',
@@ -34,7 +40,7 @@ export class Home {
     },
   ]);
 
-  features = signal([
+  features = signal<Feature[]>([
     {
       icon: 'images/features/desktop/responsive.svg',
       title: '100% Responsive',
