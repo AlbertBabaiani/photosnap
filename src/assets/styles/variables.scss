@@ -16,3 +16,10 @@
     --py: 13.6rem;
   }
 }
+
+@media (min-width: 1440px) {
+  :root {
+    --px: 11.2rem;
+    --py: 16rem;
+  }
+}

@@ -7,9 +7,13 @@ h2 {
 
   text-transform: uppercase;
 
+  max-width: 40rem;
+
   @media (min-width: 768px) {
     font-size: 4rem;
     line-height: 1.2;
     letter-spacing: 4.17px;
+
+    max-width: 32rem;
   }
 }
