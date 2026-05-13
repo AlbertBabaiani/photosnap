@@ -61,127 +61,40 @@
 </section>
 
 <section class="story-grid">
-  <a href="#" class="story-card">
-    <picture>
-      <source media="(min-width: 768px)" srcset="images/stories/desktop/mountains.jpg" />
-      <img src="images/stories/mobile/mountains.jpg" alt="The Mountains" class="story-bg-img" />
-    </picture>
+  @for (story of stories(); track story.title) {
+    <a href="#" class="story-card">
+      <picture>
+        <source media="(min-width: 768px)" [srcset]="story.desktopImg" />
+        <img [src]="story.mobileImg" [alt]="story.title" class="story-bg-img" />
+      </picture>
 
-    <div class="story-overlay"></div>
+      <div class="story-overlay"></div>
 
-    <div class="story-content">
-      <h3 class="story-title">The Mountains</h3>
-      <p class="story-author">by John Appleseed</p>
+      <div class="story-content">
+        <h3 class="story-title">{{ story.title }}</h3>
+        <p class="story-author">by {{ story.author }}</p>
 
-      <hr class="story-separator" />
+        <hr class="story-separator" />
 
-      <div class="read-story-link">
-        <span>READ STORY</span>
+        <div class="read-story-link">
+          <span>READ STORY</span>
 
-        <img src="images/shared/desktop/arrow.svg" class="arrow-icon-light" alt="" />
+          <img src="images/shared/desktop/arrow.svg" class="arrow-icon-light" alt="" />
+        </div>
       </div>
-    </div>
-  </a>
-
-  <a href="#" class="story-card">
-    <picture>
-      <source media="(min-width: 768px)" srcset="images/stories/desktop/cityscapes.jpg" />
-      <img
-        src="images/stories/mobile/cityscapes.jpg"
-        alt="Sunset Cityscapes"
-        class="story-bg-img"
-      />
-    </picture>
-    <div class="story-overlay"></div>
-    <div class="story-content">
-      <h3 class="story-title">Sunset Cityscapes</h3>
-      <p class="story-author">by Benjamin Cruz</p>
-      <hr class="story-separator" />
-      <div class="read-story-link">
-        <span>READ STORY</span>
-        <img src="images/shared/desktop/arrow.svg" class="arrow-icon-light" alt="" />
-      </div>
-    </div>
-  </a>
-
-  <a href="#" class="story-card">
-    <picture>
-      <source media="(min-width: 768px)" srcset="images/stories/desktop/18-days-voyage.jpg" />
-      <img
-        src="images/stories/mobile/18-days-voyage.jpg"
-        alt="18 days voyage"
-        class="story-bg-img"
-      />
-    </picture>
-    <div class="story-overlay"></div>
-    <div class="story-content">
-      <h3 class="story-title">18 Days Voyage</h3>
-      <p class="story-author">by Alexei Borodin</p>
-      <hr class="story-separator" />
-      <div class="read-story-link">
-        <span>READ STORY</span>
-        <img src="images/shared/desktop/arrow.svg" class="arrow-icon-light" alt="" />
-      </div>
-    </div>
-  </a>
-
-  <a href="#" class="story-card">
-    <picture>
-      <source media="(min-width: 768px)" srcset="images/stories/desktop/architecturals.jpg" />
-      <img
-        src="images/stories/mobile/architecturals.jpg"
-        alt="Architecturals"
-        class="story-bg-img"
-      />
-    </picture>
-    <div class="story-overlay"></div>
-    <div class="story-content">
-      <h3 class="story-title">Architecturals</h3>
-      <p class="story-author">by Samantha Brooke</p>
-      <hr class="story-separator" />
-      <div class="read-story-link">
-        <span>READ STORY</span>
-        <img src="images/shared/desktop/arrow.svg" class="arrow-icon-light" alt="" />
-      </div>
-    </div>
-  </a>
+    </a>
+  }
 </section>
 
 <section class="features-section">
-  <div class="feature-card">
-    <div class="feature-icon-wrapper">
-      <img
-        src="images/features/desktop/responsive.svg"
-        alt="Responsive icon"
-        class="feature-icon"
-      />
-    </div>
+  @for (feature of features(); track feature.title) {
+    <div class="feature-card">
+      <div class="feature-icon-wrapper">
+        <img [src]="feature.icon" [alt]="feature.title + ' icon'" class="feature-icon" />
+      </div>
 
-    <h3 class="feature-title">100% Responsive</h3>
-    <p class="feature-description">
-      No matter which the device you're on, our site is fully responsive and stories look beautiful
-      on any screen.
-    </p>
-  </div>
-
-  <div class="feature-card">
-    <div class="feature-icon-wrapper">
-      <img src="images/features/desktop/no-limit.svg" alt="Infinity icon" class="feature-icon" />
+      <h3 class="feature-title">{{ feature.title }}</h3>
+      <p class="feature-description">{{ feature.description }}</p>
     </div>
-    <h3 class="feature-title">No Photo Upload Limit</h3>
-    <p class="feature-description">
-      Our tool has no limits on uploads or bandwidth. Freely upload in bulk and share all of your
-      stories in one go.
-    </p>
-  </div>
-
-  <div class="feature-card">
-    <div class="feature-icon-wrapper">
-      <img src="images/features/desktop/embed.svg" alt="Social embed icon" class="feature-icon" />
-    </div>
-    <h3 class="feature-title">Available to Embed</h3>
-    <p class="feature-description">
-      Embed Tweets, Facebook posts, Instagram media, Vimeo or YouTube videos, Google Maps, and more.
-    </p>
-  </div>
+  }
 </section>
