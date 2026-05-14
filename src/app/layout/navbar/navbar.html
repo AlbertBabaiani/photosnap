@@ -1,0 +1,33 @@
+<nav class="navbar container">
+  <a routerLink="/" class="logo-link" aria-label="Photosnap Home">
+    <img src="assets/images/shared/desktop/logo.svg" alt="Photosnap" />
+  </a>
+
+  <!-- Mobile Menu Toggle Button -->
+  <button
+    class="mobile-toggle"
+    (click)="toggleMenu()"
+    [attr.aria-expanded]="isMenuOpen()"
+    aria-controls="primary-navigation"
+    aria-label="Toggle navigation menu"
+  >
+    @if (!isMenuOpen()) {
+      <!--  TODO: Change to ngSrc -->
+      <img src="assets/images/shared/mobile/menu.svg" alt="Open Menu" />
+    } @else {
+      <img src="assets/images/shared/mobile/close.svg" alt="Close Menu" />
+    }
+  </button>
+
+  <div id="primary-navigation" class="nav-menu" [class.is-open]="isMenuOpen()">
+    <ul class="nav-links">
+      <li><a routerLink="/stories">Stories</a></li>
+      <li><a routerLink="/features">Features</a></li>
+      <li><a routerLink="/pricing">Pricing</a></li>
+    </ul>
+
+    <hr class="nav-separator" />
+
+    <a routerLink="/invite" class="btn btn-dark">Get an invite</a>
+  </div>
+</nav>
