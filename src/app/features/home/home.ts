@@ -1,9 +1,10 @@
-import { Component, signal } from '@angular/core';
+import { Component, signal, inject } from '@angular/core';
 import { Story } from '../../shared/models/story.model';
 import { Feature } from '../../shared/models/feature.model';
 import { StoryCardComponent } from '../../shared/ui/story-card/story-card';
 import { FeatureCardComponent } from '../../shared/ui/feature-card/feature-card';
 import { RouterLink } from '@angular/router';
+import { CloudinaryService } from '../../shared/data-access/cloudinary.service';
 
 @Component({
   selector: 'app-home',
@@ -13,6 +14,13 @@ import { RouterLink } from '@angular/router';
   styleUrl: './home.scss',
 })
 export class Home {
+  private cloudinaryService = inject(CloudinaryService);
+
+  heroImages = {
+    desktop: this.cloudinaryService.getImage('photosnap/home/desktop/create-and-share').toURL(),
+    tablet: this.cloudinaryService.getImage('photosnap/home/tablet/create-and-share').toURL(),
+    mobile: this.cloudinaryService.getImage('photosnap/home/mobile/create-and-share').toURL(),
+  };
   stories = signal<Story[]>([
     {
       desktopImg: 'assets/images/stories/desktop/mountains.jpg',

@@ -1,9 +1,9 @@
 <section class="hero-section">
   <picture>
-    <source media="(min-width: 1440px)" srcset="assets/images/home/desktop/create-and-share.jpg" />
-    <source media="(min-width: 768px)" srcset="assets/images/home/tablet/create-and-share.jpg" />
+    <source media="(min-width: 1440px)" [srcset]="heroImages.desktop" />
+    <source media="(min-width: 768px)" [srcset]="heroImages.tablet" />
     <img
-      src="assets/images/home/mobile/create-and-share.jpg"
+      [src]="heroImages.mobile"
       class="hero-img"
       alt="Create and share photo stories"
     />
@@ -62,12 +62,12 @@
 
 <section class="story-grid">
   @for (story of stories(); track story.title) {
-    <app-story-card [story]="story"></app-story-card>
+    <app-story-card [story]="story" />
   }
 </section>
 
 <section class="features-section">
   @for (feature of features(); track feature.title) {
-    <app-feature-card [feature]="feature"></app-feature-card>
+    <app-feature-card [feature]="feature" />
   }
 </section>
