@@ -139,29 +139,6 @@
 
 .invite-link {
   grid-area: invite;
-  display: flex;
-  align-items: center;
-  gap: 2.2rem;
-  color: var(--white);
-  text-decoration: none;
-  font-size: 1.2rem;
-  font-weight: bold;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  transition: text-decoration 0.3s ease;
-
-  &:hover {
-    text-decoration: underline;
-  }
-
-  &:focus-visible {
-    outline: 2px solid var(--white);
-    outline-offset: 4px;
-  }
-
-  .arrow {
-    width: 4.2rem;
-  }
 
   @media (min-width: 768px) {
     margin-left: auto;
