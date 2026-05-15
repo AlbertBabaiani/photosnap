@@ -1,11 +1,12 @@
 import { Component, signal } from '@angular/core';
 import { Feature } from '../../shared/models/feature.model';
 import { FeatureCardComponent } from '../../shared/ui/feature-card/feature-card';
+import { BetaBannerComponent } from '../../shared/ui/beta-banner/beta-banner';
 
 @Component({
   selector: 'app-features',
   standalone: true,
-  imports: [FeatureCardComponent],
+  imports: [FeatureCardComponent, BetaBannerComponent],
   templateUrl: './features.html',
   styleUrl: './features.scss',
 })

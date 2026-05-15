@@ -1,0 +1,74 @@
+.beta-banner {
+  position: relative;
+  color: var(--white);
+  height: 28rem;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 3.3rem;
+    width: 12.8rem;
+    height: 6px;
+    background-image: linear-gradient(1deg, #ffc593 -25%, #bc7198 27%, #5a77ff 75%);
+    z-index: 2;
+
+    @media (min-width: 768px) {
+      top: 0;
+      left: 0;
+      width: 6px;
+      height: 100%;
+    }
+  }
+}
+
+.bg-img img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.content-wrapper {
+  position: relative;
+  z-index: 1;
+  padding: 6.4rem 3.3rem;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2.4rem;
+
+  @media (min-width: 768px) {
+    padding: 6.8rem 4rem;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  @media (min-width: 1440px) {
+    max-width: 111rem;
+    margin: 0 auto;
+    padding: 6.8rem 0;
+  }
+
+  h2 {
+    font-size: 3.2rem;
+    line-height: 4rem;
+    letter-spacing: 3.33px;
+    text-transform: uppercase;
+    max-width: 40rem;
+    margin: 0;
+
+    @media (min-width: 768px) {
+      font-size: 4rem;
+      line-height: 4.8rem;
+      letter-spacing: 4.17px;
+    }
+  }
+}

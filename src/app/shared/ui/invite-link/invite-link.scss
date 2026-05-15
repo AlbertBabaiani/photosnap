@@ -1,0 +1,52 @@
+:host {
+  display: inline-flex;
+}
+
+.invite-link {
+  font-size: 1.2rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-decoration: none;
+  text-transform: uppercase;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 1.8rem;
+  cursor: pointer;
+
+  img {
+    transition: transform 0.3s ease;
+  }
+
+  &.is-light {
+    color: var(--white);
+    
+    img {
+      filter: brightness(0) invert(1);
+    }
+  }
+
+  &.is-dark {
+    color: var(--black);
+    
+    img {
+      filter: none;
+    }
+  }
+
+  &:hover,
+  &:focus-visible {
+    text-decoration: underline;
+    text-underline-offset: 6px;
+    text-decoration-thickness: 1px;
+
+    img {
+      transform: translateX(0.5rem);
+    }
+  }
+
+  &:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 6px;
+  }
+}

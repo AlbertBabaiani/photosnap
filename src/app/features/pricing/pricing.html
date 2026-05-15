@@ -1,0 +1,53 @@
+<section class="hero-section">
+  <picture class="hero-picture" style="display: contents;">
+    <source media="(min-width: 1440px)" srcset="assets/images/pricing/desktop/hero.jpg" />
+    <source media="(min-width: 768px)" srcset="assets/images/pricing/tablet/hero.jpg" />
+    <img
+      src="assets/images/pricing/mobile/hero.jpg"
+      class="hero-img"
+      alt="Photographer holding camera at sunset"
+    />
+  </picture>
+
+  <div class="section-content hero-content">
+    <h1>PRICING</h1>
+    <p>
+      Create a your stories, Photosnap is a platform for photographers and visual storytellers. It’s the simple way to create and share your photos.
+    </p>
+  </div>
+</section>
+
+<section class="billing-toggle-section">
+  <span class="toggle-label" [class.active]="billingCycle() === 'monthly'">Monthly</span>
+  <button
+    class="toggle-switch"
+    (click)="toggleBillingCycle()"
+    [attr.aria-pressed]="billingCycle() === 'yearly'"
+    aria-label="Toggle yearly billing"
+  >
+    <div class="toggle-thumb" [class.is-yearly]="billingCycle() === 'yearly'"></div>
+  </button>
+  <span class="toggle-label" [class.active]="billingCycle() === 'yearly'">Yearly</span>
+</section>
+
+<section class="pricing-cards-section">
+  <div class="pricing-cards-container">
+    @for (tier of tiers(); track tier.id) {
+      <div class="pricing-card" [class.is-pro]="tier.id === 'pro'">
+        <div class="card-header">
+          <h2>{{ tier.name }}</h2>
+          <p>{{ tier.description }}</p>
+        </div>
+        
+        <div class="card-price-container">
+          <p class="price">${{ billingCycle() === 'monthly' ? tier.monthlyPrice.toFixed(2) : (tier.monthlyPrice * 12).toFixed(2) }}</p>
+          <p class="billing-type">per {{ billingCycle() === 'monthly' ? 'month' : 'year' }}</p>
+        </div>
+
+        <button class="btn" [class.btn-light]="tier.id === 'pro'">PICK PLAN</button>
+      </div>
+    }
+  </div>
+</section>
+
+<app-beta-banner />
