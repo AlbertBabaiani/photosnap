@@ -198,7 +198,7 @@
     text-align: left;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-areas: 
+    grid-template-areas:
       'header price'
       'button price';
     align-items: start;
@@ -213,7 +213,7 @@
   &.is-pro {
     background-color: var(--black);
     color: var(--white);
-    
+
     @media (min-width: 1440px) {
       padding: 8.8rem 4rem;
     }
@@ -250,7 +250,7 @@
       line-height: 1.67;
       opacity: 0.6;
       margin-bottom: 4rem;
-      
+
       @media (min-width: 768px) and (max-width: 1439px) {
         margin-bottom: 0;
       }
@@ -259,7 +259,7 @@
 
   .card-price-container {
     margin-bottom: 4rem;
-    
+
     @media (min-width: 768px) and (max-width: 1439px) {
       grid-area: price;
       text-align: right;
@@ -289,7 +289,9 @@
     text-transform: uppercase;
     border: none;
     cursor: pointer;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    transition:
+      background-color 0.3s ease,
+      color 0.3s ease;
     background-color: var(--black);
     color: var(--white);
 
@@ -320,3 +322,112 @@
   }
 }
 // Pricing Cards End
+
+// Compare Section Start
+.compare-section {
+  padding: 6.4rem 2.8rem;
+  max-width: 73rem;
+  margin: 0 auto;
+
+  @media (min-width: 768px) {
+    padding: 11.2rem 4rem;
+  }
+}
+
+.compare-heading {
+  text-align: center;
+  margin-inline: auto;
+
+  font-size: 4rem;
+  letter-spacing: 4.17px;
+  text-transform: uppercase;
+  margin-bottom: 6.4rem;
+  display: none;
+
+  @media (min-width: 768px) {
+    display: block;
+  }
+}
+
+.compare-table-container {
+  width: 100%;
+}
+
+.compare-row {
+  display: flex;
+  flex-wrap: wrap;
+  border-bottom: 1px solid #dfdfdf;
+  padding: 2.4rem 0;
+
+  &.header-row {
+    padding-bottom: 2.4rem;
+    border-bottom: 1px solid var(--black);
+
+    @media (max-width: 767px) {
+      .tier-col {
+        display: none;
+      }
+    }
+  }
+
+  &:not(.header-row) {
+    .feature-name-col {
+      font-weight: bold;
+      margin-bottom: 1.6rem;
+      width: 100%;
+
+      @media (min-width: 768px) {
+        margin-bottom: 0;
+        width: 40%;
+        display: flex;
+        align-items: center;
+      }
+    }
+  }
+}
+
+.feature-name-col {
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: bold;
+
+  @media (min-width: 768px) {
+    width: 40%;
+  }
+}
+
+.tier-col {
+  display: flex;
+  flex-direction: column;
+
+  @media (max-width: 767px) {
+    width: 33.33%;
+    align-items: flex-start;
+
+    &[data-tier]::before {
+      content: attr(data-tier);
+      font-size: 1rem;
+      letter-spacing: 1.67px;
+      text-transform: uppercase;
+      opacity: 0.5;
+      margin-bottom: 0.8rem;
+      font-weight: bold;
+    }
+  }
+
+  @media (min-width: 768px) {
+    width: 20%;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+    font-weight: bold;
+  }
+}
+
+.check-icon {
+  width: 1.6rem;
+  height: auto;
+}
+// Compare Section End
