@@ -1,8 +1,10 @@
 // Utilities Start
 
-.decorative-box {
-  background-color: var(--black);
+.decorative-img {
+  width: 100%;
   height: 18rem;
+  object-fit: cover;
+  display: block;
 
   @media (min-width: 768px) {
     height: 60rem;
@@ -172,7 +174,7 @@
     grid-template-columns: 6fr 4fr;
   }
 
-  .decorative-box {
+  .decorative-img {
     grid-area: story-box;
   }
 
@@ -194,7 +196,7 @@
     grid-template-columns: 4fr 6fr;
   }
 
-  .decorative-box {
+  .decorative-img {
     grid-area: design-box;
   }
 
