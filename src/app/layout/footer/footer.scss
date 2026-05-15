@@ -1,0 +1,171 @@
+:host {
+  display: block;
+  background-color: var(--black);
+  color: var(--white);
+  padding: 5.6rem 3.3rem;
+
+  @media (min-width: 768px) {
+    padding: 6.4rem 4rem;
+  }
+
+  @media (min-width: 1440px) {
+    padding: 6.4rem 16.5rem;
+  }
+}
+
+.footer-container {
+  display: grid;
+  row-gap: 3.2rem;
+
+  /* Mobile (default) */
+  grid-template-areas:
+    'logo'
+    'socials'
+    'nav'
+    'invite'
+    'copyright';
+  justify-items: center;
+  text-align: center;
+
+  @media (min-width: 768px) and (max-width: 1439px) {
+    grid-template-columns: 1fr auto;
+    grid-template-areas:
+      'logo invite'
+      'nav nav'
+      'socials copyright';
+    justify-items: start;
+    align-items: center;
+    text-align: left;
+    row-gap: 3.2rem; // Wait, actually on tablet, logo and invite are on same line. Let's adjust gap if needed.
+    // The design shows nav is relatively close to logo. Let's manage margins per item or adjust row-gaps.
+  }
+
+  @media (min-width: 1440px) {
+    grid-template-columns: auto 1fr auto;
+    grid-template-areas:
+      'logo nav invite'
+      'socials nav copyright';
+    justify-items: start;
+    align-items: stretch;
+    text-align: left;
+    row-gap: 8.5rem; // space between logo and socials
+  }
+}
+
+.logo-link {
+  grid-area: logo;
+}
+
+.social-icons {
+  grid-area: socials;
+  display: flex;
+  gap: 1.4rem;
+
+  .social-link {
+    transition: filter 0.3s ease;
+
+    &:hover {
+      filter: brightness(0) saturate(100%) invert(67%) sepia(50%) saturate(6159%) hue-rotate(320deg)
+        brightness(101%) contrast(106%);
+    }
+  }
+
+  @media (min-width: 1440px) {
+    align-self: end;
+  }
+}
+
+.footer-nav {
+  grid-area: nav;
+  margin-top: 1.6rem; // default mobile
+  margin-bottom: 8.8rem;
+
+  @media (min-width: 768px) {
+    margin: 0;
+  }
+
+  @media (min-width: 1440px) {
+    margin-left: 11rem;
+  }
+
+  .nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    @media (min-width: 768px) {
+      flex-direction: row;
+      gap: 2.6rem;
+    }
+
+    @media (min-width: 1440px) {
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    a {
+      color: var(--white);
+      text-decoration: none;
+      font-size: 1.2rem;
+      font-weight: bold;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      transition: opacity 0.3s ease;
+
+      &:hover {
+        opacity: 0.3;
+      }
+    }
+  }
+}
+
+.invite-link {
+  grid-area: invite;
+  display: flex;
+  align-items: center;
+  gap: 2.2rem;
+  color: var(--white);
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  transition: text-decoration 0.3s ease;
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  .arrow {
+    width: 4.2rem;
+  }
+
+  @media (min-width: 768px) {
+    margin-left: auto;
+  }
+
+  @media (min-width: 1440px) {
+    align-self: start;
+    justify-self: end;
+  }
+}
+
+.copyright {
+  grid-area: copyright;
+  color: var(--white);
+  opacity: 0.5;
+  font-size: 1.5rem;
+  margin: 0;
+
+  @media (min-width: 768px) {
+    justify-self: end;
+  }
+
+  @media (min-width: 1440px) {
+    align-self: end;
+    justify-self: end;
+  }
+}
