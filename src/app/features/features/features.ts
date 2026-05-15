@@ -1,0 +1,51 @@
+import { Component, signal } from '@angular/core';
+import { Feature } from '../../shared/models/feature.model';
+import { FeatureCardComponent } from '../../shared/ui/feature-card/feature-card';
+
+@Component({
+  selector: 'app-features',
+  standalone: true,
+  imports: [FeatureCardComponent],
+  templateUrl: './features.html',
+  styleUrl: './features.scss',
+})
+export class Features {
+  features = signal<Feature[]>([
+    {
+      icon: 'assets/images/features/desktop/responsive.svg',
+      title: '100% Responsive',
+      description:
+        "No matter which the device you're on, our site is fully responsive and stories look beautiful on any screen.",
+    },
+    {
+      icon: 'assets/images/features/desktop/no-limit.svg',
+      title: 'No Photo Upload Limit',
+      description:
+        'Our tool has no limits on uploads or bandwidth. Freely upload in bulk and share all of your stories in one go.',
+    },
+    {
+      icon: 'assets/images/features/desktop/embed.svg',
+      title: 'Available to Embed',
+      description:
+        'Embed Tweets, Facebook posts, Instagram media, Vimeo or YouTube videos, Google Maps, and more.',
+    },
+    {
+      icon: 'assets/images/features/desktop/custom-domain.svg',
+      title: 'Custom Domain',
+      description:
+        'With Photosnap subscriptions you can host your stories on your own domain. You can also remove our branding!',
+    },
+    {
+      icon: 'assets/images/features/desktop/boost-exposure.svg',
+      title: 'Boost Your Exposure',
+      description:
+        'Users that viewed your story or gallery can easily get notified of new and featured stories with our built in mailing list.',
+    },
+    {
+      icon: 'assets/images/features/desktop/drag-drop.svg',
+      title: 'Drag & Drop Image',
+      description:
+        'Easily drag and drop your image and get beautiful shots everytime. No over the top tooling to add friction to creating stories.',
+    },
+  ]);
+}

@@ -12,4 +12,9 @@ export const routes: Routes = [
     loadComponent: () => import('./features/stories/stories').then((m) => m.Stories),
     title: 'Photosnap - Stories',
   },
+  {
+    path: 'features',
+    loadComponent: () => import('./features/features/features').then((m) => m.Features),
+    title: 'Photosnap - Features',
+  },
 ];

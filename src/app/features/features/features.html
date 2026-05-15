@@ -1,0 +1,24 @@
+<section class="hero-section">
+  <picture class="hero-picture" style="display: contents;">
+    <source media="(min-width: 1440px)" srcset="assets/images/features/desktop/hero.jpg" />
+    <source media="(min-width: 768px)" srcset="assets/images/features/tablet/hero.jpg" />
+    <img
+      src="assets/images/features/mobile/hero.jpg"
+      class="hero-img"
+      alt="Camera and hands"
+    />
+  </picture>
+
+  <div class="section-content hero-content">
+    <h1>FEATURES</h1>
+    <p>
+      We make sure all of our features are designed to be loved by every aspiring and even professional photographers who wanted to share their stories.
+    </p>
+  </div>
+</section>
+
+<section class="features-section">
+  @for (feature of features(); track feature.title) {
+    <app-feature-card [feature]="feature" />
+  }
+</section>
