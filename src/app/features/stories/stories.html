@@ -13,12 +13,12 @@
 
   <a href="#"
     >Read the story
-    <img src="images/shared/desktop/arrow.svg" class="arrow-icon-light" alt="" />
+    <img src="assets/images/shared/desktop/arrow.svg" class="arrow-icon-light" alt="" />
   </a>
 </section>
 
 <section class="story-grid">
   @for (story of stories(); track story.title) {
-    <app-story-card [story]="story"></app-story-card>
+    <app-story-card [story]="story" />
   }
 </section>
